@@ -2,7 +2,12 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000', // URL do backend
-});
+    baseURL: process.env.NODE_ENV === 'development'
+      ? 'http://localhost:5000'
+      : 'https://masterChefRecipesBackEnd.onrender.com'
+  });
+  
 
 export default api;
+
+
