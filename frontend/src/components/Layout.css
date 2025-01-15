@@ -1,0 +1,38 @@
+/* Layout.css */
+.layout-container {
+    display: flex;
+    height: 100vh; 
+    overflow: hidden; /* se quiser esconder rolagem extra no body */
+    position: relative;
+  }
+  
+  /* Botão hamburguer - aparece em telas menores */
+  .hamburger-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    background: #555;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    z-index: 999; /* para ficar acima do sidebar */
+    display: none; /* escondido em telas grandes */
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* RESPONSIVIDADE */
+  @media (max-width: 768px) {
+    /* exibe botao hamburguer em telas menores */
+    .hamburger-btn {
+      display: block;
+    }
+  }
+  
