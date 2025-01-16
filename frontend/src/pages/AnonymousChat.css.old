@@ -5,18 +5,18 @@
     flex-direction: column;
     height: 100vh;
     background-color: #fafafa;
-}
-
-/* Top bar for login/register (below the header) */
-.anon-topbar {
+  }
+  
+  /* Barra de login/register no topo (abaixo do header) */
+  .anon-topbar {
     display: flex;
     justify-content: flex-end;
     padding: 8px 16px;
     background-color: #f0f0f0;
     border-bottom: 1px solid #ddd;
-}
-
-.topbar-btn {
+  }
+  
+  .topbar-btn {
     margin-left: 10px;
     text-decoration: none;
     color: #fff;
@@ -24,14 +24,14 @@
     padding: 6px 12px;
     border-radius: 4px;
     font-size: 14px;
-}
-
-.topbar-btn:hover {
+  }
+  
+  .topbar-btn:hover {
     background-color: #45a049;
-}
-
-/* Chat wrapper, centered and ~70% width */
-.anon-chat-wrapper {
+  }
+  
+  /* Wrapper do chat centralizado e ~70% de largura */
+  .anon-chat-wrapper {
     width: 70%;
     margin: 20px auto;
     display: flex;
@@ -41,79 +41,79 @@
     border-radius: 8px;
     background-color: #fff;
     overflow: hidden;
-}
-
-.anon-messages {
+  }
+  
+  .anon-messages {
     flex: 1;
     padding: 16px;
     overflow-y: auto;
     background-color: #fafafa;
     display: flex;
     flex-direction: column;
-}
-
-.anon-message {
+  }
+  
+  .anon-message {
     display: flex;
     margin-bottom: 10px;
     max-width: 70%;
-}
-
-/* Avatars */
-.anon-avatar {
+  }
+  
+  /* Avatares */
+  .anon-avatar {
     width: 40px;
     height: 40px;
     margin: 0 8px;
-}
-.anon-avatar img {
+  }
+  .anon-avatar img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-}
-
-/* Alignment: user vs assistant */
-.anon-user {
+  }
+  
+  /* Alinhamento user x assistant */
+  .anon-user {
     margin-left: auto;
     justify-content: flex-end;
-    flex-direction: row-reverse; /* Avatar on the opposite side */
-}
-
-.anon-assistant {
+    flex-direction: row-reverse; /* avatar do outro lado */
+  }
+  
+  .anon-assistant {
     margin-right: auto;
     justify-content: flex-start;
-}
-
-/* Chat bubbles */
-.anon-bubble {
+  }
+  
+  /* Balões */
+  .anon-bubble {
     background-color: #e0e0e0;
     padding: 10px;
     border-radius: 8px;
     line-height: 1.4;
     white-space: pre-wrap;
-}
-
-.anon-user .anon-bubble {
+  }
+  
+  .anon-user .anon-bubble {
     background-color: #cef0ff;
     color: #222;
     border-top-right-radius: 0;
-}
-
-.anon-assistant .anon-bubble {
+  }
+  
+  .anon-assistant .anon-bubble {
     background-color: #e0e0e0;
     color: #333;
     border-top-left-radius: 0;
-}
-
-/* Input area */
-.anon-input-container {
+  }
+  
+  /* Área de input */
+  .anon-input-container {
     display: flex;
     gap: 8px;
     padding: 16px;
     border-top: 1px solid #ddd;
     background-color: #f7f7f7;
-}
-
-.anon-input {
+  }
+  
+  .anon-input {
     flex: 1;
     resize: none;
     border-radius: 6px;
@@ -121,9 +121,9 @@
     font-size: 14px;
     border: 1px solid #ccc;
     outline: none;
-}
-
-.anon-send-btn {
+  }
+  
+  .anon-send-btn {
     background-color: #4caf50;
     color: #fff;
     border: none;
@@ -131,27 +131,32 @@
     padding: 0 16px;
     font-size: 14px;
     cursor: pointer;
-}
-
-.anon-send-btn:hover {
+  }
+  
+  .anon-send-btn:hover {
     background-color: #45a049;
-}
+  }
+  
 
-/* Markdown content styles */
-.markdown-content {
-    line-height: 1.0; /* Reduces line height */
-    margin: 0; /* Removes default outer margins */
-}
-
-/* Adjust paragraphs to reduce spacing between them */
-.markdown-content p {
-    margin: 0 0 0.3em; /* Example: reduces spacing between paragraphs */
-}
-
-/* Adjust lists, headers, etc. as needed */
-.markdown-content ul, .markdown-content ol {
+  
+  .markdown-content {
+    /* Define altura de linha menor */
+    line-height: 1.0; 
+    /* Se quiser remover margens externas padrão */
+    margin: 0;
+  }
+  
+  /* Ajustar parágrafos para reduzir margens entre eles */
+  .markdown-content p {
+    margin: 0 0 0.3em; /* Exemplo: reduz distância entre parágrafos */
+    /* ou margin: 0; para zero de margem */
+  }
+  
+  /* Ajustar listas, cabeçalhos, etc. conforme necessidade */
+  .markdown-content ul, .markdown-content ol {
     margin: 0 0 0.2em;
-}
-.markdown-content h1, .markdown-content h2, .markdown-content h3 {
+  }
+  .markdown-content h1, .markdown-content h2, .markdown-content h3 {
     margin: 0.3em 0;
-}
+  }
+  
