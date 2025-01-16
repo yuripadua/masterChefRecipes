@@ -2,35 +2,49 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const recipeRoutes = require('./routes/recipeRoutes');
-const chatRoutes = require('./routes/chatRoutes');
-
-
-
+// const recipeRoutes = require('./routes/recipeRoutes');
+const chatAnonRoutes = require('./routes/chatAnonRoutes');
+const authRoutes = require('./routes/authRoutes');
+const chatHistoryRoutes = require('./routes/chatHistoryRoutes'); 
 
 
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use('/recipes', recipeRoutes);
-app.use('/chat', chatRoutes);
+// app.use('/recipes', recipeRoutes);
+
+
 
 
 // Exemplo de conexão com MongoDB Atlas
-// const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/chatbot-receitas';
-// mongoose
-//   .connect(MONGODB_URI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//   })
-//   .then(() => console.log('MongoDB conectado!'))
-//   .catch((err) => console.error('Erro de conexão com MongoDB:', err));
+const MONGODB_URI = process.env.MONGODB_URI;
+mongoose
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => console.log('MongoDB conectado!'))
+  .catch((err) => console.error('Erro de conexão com MongoDB:', err));
+
+
+
 
 // Exemplo de rota simples
 app.get('/', (req, res) => {
   res.send('API do Chatbot de Receitas está rodando!');
 });
+
+
+
+// Rotas públicas
+app.use('/auth', authRoutes);
+
+// Rotas de chat que requerem login
+app.use('/chats', chatHistoryRoutes);
+
+//Rotas de chat anonimas
+app.use('/chat-anon', chatAnonRoutes);
 
 // Porta
 const PORT = process.env.PORT || 5000;

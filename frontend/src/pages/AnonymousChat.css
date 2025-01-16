@@ -1,109 +1,119 @@
-/* ChatBot.css */
-.chat-container {
+/* src/pages/AnonymousChat.css */
+
+.anon-container {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    height: 100%;
-    background-color: #fff;
-    border-left: 1px solid #ddd; /* Caso queira borda se tiver sidebar */
+    height: 100vh;
+    background-color: #fafafa;
   }
   
-  /* HEADER BAR */
-  .chat-header {
+  /* Barra de login/register no topo (abaixo do header) */
+  .anon-topbar {
     display: flex;
-    align-items: center;
-    background-color: #f3f3f3;
+    justify-content: flex-end;
     padding: 8px 16px;
+    background-color: #f0f0f0;
     border-bottom: 1px solid #ddd;
   }
   
-  .chat-header .header-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 12px;
+  .topbar-btn {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4caf50;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
   }
   
-  /* TITULO DO HEADER */
-  .chat-header h2 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: normal;
+  .topbar-btn:hover {
+    background-color: #45a049;
   }
   
-  /* AREA DE MENSAGENS */
-  .chat-messages {
+  /* Wrapper do chat centralizado e ~70% de largura */
+  .anon-chat-wrapper {
+    width: 70%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  
+  .anon-messages {
     flex: 1;
     padding: 16px;
     overflow-y: auto;
     background-color: #fafafa;
-  }
-  
-  /* BLOCO DE MENSAGEM */
-  .message {
     display: flex;
-    margin-bottom: 12px;
-    max-width: 80%; /* Para não ultrapassar a tela */
+    flex-direction: column;
   }
   
-  /* Para alinhar mensagens do usuário à direita */
-  .message-user {
-    margin-left: auto; /* empurra para a direita */
-    flex-direction: row-reverse; /* avatar depois do bubble */
+  .anon-message {
+    display: flex;
+    margin-bottom: 10px;
+    max-width: 70%;
   }
   
-  /* Bolha do assistente (fica a esquerda) */
-  .message-assistant {
-    margin-right: auto; /* empurra para a esquerda */
-  }
-  
-  /* AVATAR AO LADO DA MENSAGEM */
-  .message-avatar {
+  /* Avatares */
+  .anon-avatar {
     width: 40px;
     height: 40px;
     margin: 0 8px;
   }
-  
-  .message-avatar img {
+  .anon-avatar img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: cover; /* se a imagem não for quadrada */
+    object-fit: cover;
   }
   
-  /* ESTILO DA BOLHA DE MENSAGEM */
-  .message-bubble {
+  /* Alinhamento user x assistant */
+  .anon-user {
+    margin-left: auto;
+    justify-content: flex-end;
+    flex-direction: row-reverse; /* avatar do outro lado */
+  }
+  
+  .anon-assistant {
+    margin-right: auto;
+    justify-content: flex-start;
+  }
+  
+  /* Balões */
+  .anon-bubble {
     background-color: #e0e0e0;
-    padding: 10px 14px;
-    border-radius: 10px;
-    font-size: 14px;
+    padding: 10px;
+    border-radius: 8px;
     line-height: 1.4;
     white-space: pre-wrap;
   }
   
-  /* Ajuste para USER x ASSISTANT */
-  .message-user .message-bubble {
+  .anon-user .anon-bubble {
     background-color: #cef0ff;
     color: #222;
     border-top-right-radius: 0;
   }
   
-  .message-assistant .message-bubble {
+  .anon-assistant .anon-bubble {
     background-color: #e0e0e0;
     color: #333;
     border-top-left-radius: 0;
   }
   
-  /* ÁREA DE INPUT */
-  .chat-input-container {
+  /* Área de input */
+  .anon-input-container {
     display: flex;
     gap: 8px;
-    padding: 8px 16px;
+    padding: 16px;
     border-top: 1px solid #ddd;
     background-color: #f7f7f7;
   }
   
-  .chat-input {
+  .anon-input {
     flex: 1;
     resize: none;
     border-radius: 6px;
@@ -113,7 +123,7 @@
     outline: none;
   }
   
-  .chat-send-btn {
+  .anon-send-btn {
     background-color: #4caf50;
     color: #fff;
     border: none;
@@ -123,13 +133,12 @@
     cursor: pointer;
   }
   
-  .chat-send-btn:hover {
+  .anon-send-btn:hover {
     background-color: #45a049;
   }
   
 
   
-
   .markdown-content {
     /* Define altura de linha menor */
     line-height: 1.0; 
